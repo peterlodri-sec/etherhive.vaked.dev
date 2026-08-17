@@ -1,0 +1,26 @@
+# EtherHive
+
+> Quantum-proof decentralized messaging. Wallet + ENS identity. Auth via
+> honesty. Post-quantum end-to-end encryption (ML-KEM-1024, ML-DSA-87) over
+> an X3DH double ratchet. One name, no phone number.
+
+Source: https://github.com/peterlodri-sec/etherhive
+
+## What it is
+
+- Identity = an ENS name you own. Login signs a UUID + timestamp
+  (EIP-191 personal_sign), the server verifies the signer against the
+  current on-chain ENS owner (Registry + Name Wrapper).
+- 1:1 messages run X3DH-bootstrapped double ratchet sessions (built on
+  Matrix's vodozemac), hybridized with ML-KEM-1024 — directional session
+  keys derived per-side via HKDF so the server never sees plaintext.
+- Honesty-auth: a 17-question honesty vector, ML-DSA-signed and hashed,
+  used as a second identity check that can't be phished the way a
+  password can.
+- Transport: Mullvad double-hop WireGuard, Tailscale/Headscale mesh.
+
+## Sibling ecosystem
+
+- vaked.dev — the ecosystem hub
+- music.vaked.dev — the constellation sound node
+- peterl.dev — builder of loops
