@@ -1,0 +1,5 @@
+Contact: https://github.com/peterlodri-sec/etherhive
+Expires: 2027-08-17T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://etherhive.vaked.dev/.well-known/security.txt
+Policy: https://etherhive.vaked.dev/.well-known/agents.md

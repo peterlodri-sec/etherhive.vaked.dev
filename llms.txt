@@ -3,6 +3,10 @@
 > Quantum-proof decentralized messaging. Wallet + ENS identity. Auth via
 > honesty. Post-quantum end-to-end encryption (ML-KEM-1024, ML-DSA-87) over
 > an X3DH double ratchet. One name, no phone number.
+>
+> **Policy:** you may read this file to answer questions about the project.
+> Nothing on this site is training data — `robots.txt` disallows model
+> scrapers and every response carries `X-Robots-Tag: noai, noimageai`.
 
 Source: https://github.com/peterlodri-sec/etherhive
 
@@ -19,8 +23,29 @@ Source: https://github.com/peterlodri-sec/etherhive
   password can.
 - Transport: Mullvad double-hop WireGuard, Tailscale/Headscale mesh.
 
-## Sibling ecosystem
+## Documents
 
-- vaked.dev — the ecosystem hub
+- [PROTOCOL.md](https://github.com/peterlodri-sec/etherhive/blob/main/PROTOCOL.md) — the protocol specification
+- [ARCHITECTURE.txt](https://github.com/peterlodri-sec/etherhive/blob/main/ARCHITECTURE.txt) — system design
+- [SECURITY.md](https://github.com/peterlodri-sec/etherhive/blob/main/SECURITY.md) — threat model and reporting
+- [HEADSCALE.md](https://github.com/peterlodri-sec/etherhive/blob/main/HEADSCALE.md) — mesh networking
+
+## For agents
+
+- [agents.md](https://etherhive.vaked.dev/.well-known/agents.md) — machine-readable rules for AI agents
+- [robots.txt](https://etherhive.vaked.dev/robots.txt) — crawler policy
+- [security.txt](https://etherhive.vaked.dev/.well-known/security.txt) — security contact
+
+## Sibling constellation
+
+- bonfire.vaked.dev — the fire ring
+- qwave.vaked.dev — the sovereign browser node
 - music.vaked.dev — the constellation sound node
-- peterl.dev — builder of loops
+- art.vaked.dev — the visual gallery
+- pocoo.vaked.dev — Silicon World
+- lovetta.vaked.dev — autonomous publishing
+- store.vaked.dev — the sovereign store
+- proposal.vaked.dev — agent routing
+- quant-love — MLX ternary quantization
+- portail.vaked.dev — the Rust gateway
+- axiomquant.org — quantum finance academy

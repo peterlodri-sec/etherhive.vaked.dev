@@ -1,6 +1,7 @@
 name: deploy
 # Push-to-deploy for etherhive.vaked.dev (CF Pages project "etherhive-vaked-dev").
-# Static single-file site — the site directory is uploaded as-is, no build step.
+# Static single-file site — the site directory is assembled fresh and uploaded
+# as-is, no build step. Nothing internal ever ships: only the files listed here.
 on:
   push:
     branches: [main]
@@ -10,14 +11,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
       - name: assemble
         run: |
-          rm -rf _site && mkdir -p _site
-          cp -r index.html favicon.svg robots.txt site.webmanifest llms.txt _headers _site/
-          cp -r icon-192.png icon-512.png apple-touch-icon.png og-image.png og-image.svg _site/
+          rm -rf _site && mkdir -p _site/.well-known
+          cp index.html 404.html favicon.svg robots.txt site.webmanifest llms.txt _headers _site/
+          cp icon-192.png icon-512.png apple-touch-icon.png og-image.png og-image.svg _site/
+          cp .well-known/agents.md .well-known/security.txt _site/.well-known/
+
       - name: deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
